@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhammad Abbas | Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* Navbar */
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#111827;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav h2{
+      color:#38bdf8;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    /* Hero Section */
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 10%;
+    }
+
+    .hero-container{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .hero-content{
+      flex:1;
+    }
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:10px;
+    }
+
+    .hero-content h1 span{
+      color:#38bdf8;
+    }
+
+    .hero-content h3{
+      font-size:28px;
+      font-weight:400;
+      margin-bottom:20px;
+      color:#cbd5e1;
+    }
+
+    .hero-content p{
+      max-width:650px;
+      color:#94a3b8;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 30px;
+      background:#38bdf8;
+      border-radius:8px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#0ea5e9;
+      transform:scale(1.05);
+    }
+
+    /* Hero Image */
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:350px;
+      height:350px;
+      object-fit:cover;
+      border-radius:50%;
+      border:5px solid #38bdf8;
+      box-shadow:0 0 30px rgba(56,189,248,0.5);
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:50px;
+      color:#38bdf8;
+    }
+
+    /* About */
+    .about{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+      color:#cbd5e1;
+      font-size:17px;
+    }
+
+    /* Skills */
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .skill{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+      text-align:center;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .skill:hover{
+      transform:translateY(-5px);
+      background:#334155;
+    }
+
+    /* Projects */
+    .projects-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+      background:#334155;
+    }
+
+    .project-card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+    }
+
+   /* Project Images */
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #334155;
+}
+
+/* Tech Stack Badges */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-stack span {
+  background: #0f172a;
+  color: #38bdf8;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #38bdf8;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-live, .btn-code {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.btn-live {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-live:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+.btn-code {
+  background: transparent;
+  color: #38bdf8;
+  border: 2px solid #38bdf8;
+}
+
+.btn-code:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+
+
+    /* Contact */
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:10px 0;
+      color:#cbd5e1;
+    }
+
+    .socials{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      background:#38bdf8;
+      padding:10px 20px;
+      border-radius:8px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .socials a:hover{
+      background:#0ea5e9;
+    }
+
+    /* Footer */
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      color:#94a3b8;
+      margin-top:40px;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-container{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .hero-content h1{
+        font-size:42px;
+      }
+
+      .hero-content h3{
+        font-size:22px;
+      }
+
+      .hero-image img{
+        width:250px;
+        height:250px;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+
+    <h2>Muhammad Abbas</h2>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <!-- Left Content -->
+      <div class="hero-content">
+
+        <h1>Hi, I'm <span>Muhammad Abbas</span></h1>
+
+        <h3>Full Stack Web Developer</h3>
+
+        <p>
+          Passionate Full Stack Developer skilled in building responsive,
+          modern and scalable web applications using MERN Stack technologies.
+        </p>
+
+        <a href="#contact" class="btn">Hire Me</a>
+
+      </div>
+
+      <!-- Right Image -->
+      <div class="hero-image">
+
+        <!-- Add your image link below -->
+        <img src="MA.jpeg" alt="Muhammad Abbas">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- About -->
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+      <p>
+        I am currently pursuing BS Software Engineering (6th Semester)
+        and have strong interest in Full Stack Web Development.
+        I enjoy creating responsive user interfaces and powerful backend systems.
+        I continuously improve my skills by building real-world projects
+        and learning modern web technologies.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React.js</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">Express.js</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">Tailwind CSS</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">Git & GitHub</div>
+
+    </div>
+
+  </section>
+
+  <!-- Projects
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+
+        <h3>Task Manager Dashboard</h3>
+
+        <p>
+          A modern task management application where users can add,
+          update, manage and organize daily tasks efficiently with
+          responsive dashboard UI.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>E-Commerce Website</h3>
+
+        <p>
+          Full stack e-commerce web application with responsive UI,
+          product management, shopping cart and backend integration.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section> -->
+
+  <!-- Projects -->
+<section id="projects">
+
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+
+      <img src="Taskmanager2.png" alt="Task Manager Dashboard" class="project-img">
+
+      <h3>Task Manager Dashboard</h3>
+
+      <div class="tech-stack">
+        <span>React.js</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>Tailwind CSS</span>
+      </div>
+
+      <p>
+        A modern task management application where users can add,
+        update, manage and organize daily tasks efficiently with
+        responsive dashboard UI.
+      </p>
+
+      <div class="project-links">
+        <a href="https://task-manager-dashboard-seven.vercel.app" target="_blank" class="btn-live">View Live</a>
+        <a href="https://github.com/Muhammad-7Abbas/Task-ManagerDashboard" target="_blank" class="btn-code">View Code</a>
+      </div>
+
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+
+      <img src="ecommerce1.png" alt="E-Commerce Website" class="project-img">
+
+      <h3>E-Commerce Website</h3>
+
+      <div class="tech-stack">
+        <span>React.js</span>
+        <span>Node.js</span>
+        <span>Express.js</span>
+        <span>MongoDB</span>
+      </div>
+
+      <p>
+        Full stack e-commerce web application with responsive UI,
+        product management, shopping cart and backend integration.
+      </p>
+
+      <div class="project-links">
+        <a href="https://e-commerce-nu-blue-53.vercel.app" target="_blank" class="btn-live">View Live</a>
+        <a href="https://github.com/Muhammad-7Abbas/e-commerce" target="_blank" class="btn-code">View Code</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+  <!-- Contact -->
+  <section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact">
+
+      <p><strong>Email:</strong> itsmuhammadabbas66@gmail.com</p>
+
+      <p><strong>Location:</strong> Swabi, KPK, Pakistan</p>
+
+      <p><strong>Education:</strong> BS Software Engineering (6th Semester)</p>
+
+      <div class="socials">
+
+        <a href="https://github.com/Muhammad-7Abbas" target="_blank">
+          GitHub
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+
+    <p>© 2026 Muhammad Abbas | Full Stack Web Developer</p>
+
+  </footer>
+
+</body>
+</html>
